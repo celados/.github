@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/celados-icon.png" alt="Celados" width="76" />
+  <img src="https://github.com/celados/.github/raw/main/assets/celados-icon.png" alt="Celados" width="76" />
 </p>
 
 <h1 align="center">Celados</h1>
