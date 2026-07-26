@@ -19,6 +19,6 @@
 
 | Project | What it is | Status |
 |---------|------------|--------|
-| [**ctx**](https://github.com/ethan-huo/ctx) | Full-document search & reading for AI agents — find any library's docs, read the complete source, not RAG fragments. | `v0.1.0` · early |
+| [**ctx**](https://github.com/celados/ctx) | Full-document search & reading for AI agents — find any library's docs, read the complete source, not RAG fragments. | `v0.1.0` · early |
 
 > More in the works. We build in the open once it's ready to be seen.
