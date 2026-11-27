@@ -1,0 +1,19 @@
+name: Configure Celados npm registry
+description: Configure npm and Bun to authenticate to npm.celados.com using the job's CELADOS_NPM_TOKEN.
+runs:
+  using: composite
+  steps:
+    - name: Set the npm user configuration
+      shell: bash
+      run: |
+        set -euo pipefail
+        if [[ -z "${CELADOS_NPM_TOKEN:-}" ]]; then
+          echo '::error::Set CELADOS_NPM_TOKEN from a GitHub Actions secret on jobs that install or publish @celados packages.'
+          exit 1
+        fi
+        config=$(mktemp "$RUNNER_TEMP/celados-npmrc.XXXXXX")
+        cat > "$config" <<'NPMRC'
+        @celados:registry=https://npm.celados.com
+        //npm.celados.com/:_authToken=${CELADOS_NPM_TOKEN}
+        NPMRC
+        printf 'NPM_CONFIG_USERCONFIG=%s\n' "$config" >> "$GITHUB_ENV"
